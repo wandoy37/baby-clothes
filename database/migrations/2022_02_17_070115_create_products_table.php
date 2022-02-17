@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('avatar');
             $table->integer('price');
             $table->timestamps();
+
+            $table->foreign('product_category_id')->references('id')->on('product_categories')->onDelete('cascade');
         });
     }
 
